@@ -1,0 +1,261 @@
+***************************** BEST CASE OF INSERTION INPUT: ALMOST SORTED ARRAY *****************************
+
+Sorting best case of an insertion sort on AL
+Merge: 14040 nanoseconds
+Insertion: 3998 nanoseconds
+Quick: 45254 nanoseconds
+
+Sorting best case of an insertion sort LL
+Merge: 46270 nanoseconds
+Insertion: 30198 nanoseconds
+Quick: 110375 nanoseconds
+
+
+
+***************************** BEST CASE OF QUICKSORT: array is unsorted and every partition divides elements in equal parts ***
+
+Sorting best case of quicksort on AL
+Merge: 19824 nanoseconds
+Insertion: 1024 nanoseconds
+Quick: 1005 nanoseconds
+
+Sorting best case of quicksort on LL
+Merge: 299 nanoseconds
+Insertion: 223 nanoseconds
+Quick: 220 nanoseconds
+
+
+***************************** WORST CASE OF INSERTIONNSORT: reverse sorted ***************
+
+Sorting worst case of insertion on AL
+Merge: 1002 nanoseconds
+Insertion: 1008 nanoseconds
+Quick: 3401 nanoseconds
+
+Sorting best case of insertion on LL
+Merge: 35851 nanoseconds
+Insertion: 10587 nanoseconds
+Quick: 6321 nanoseconds
+
+***************************** WORST CASE OF QUICKSORT: fully sorted ***************
+
+Sorting worst case of an quicksort on AL
+Merge: 182376 nanoseconds
+Insertion: 6902 nanoseconds
+Quick: 104184 nanoseconds
+
+Sorting worst case of an quicksort on LL
+Merge: 167379 nanoseconds
+Insertion: 7331 nanoseconds
+Quick: 68246 nanoseconds
+
+
+***************************** SORTING RANDOM LISTS of size 10 *****************************
+
+*** running it ONCE
+
+Sorting the list of size 10
+Where each element is in the range [-1721941,1203012]
+For LinkedLists: 
+Merge: 397095 nanoseconds 
+Insertion: 53808 nanoseconds 
+Quick: 25450 nanoseconds 
+For ArrayLists: 
+Merge: 20125 nanoseconds
+Insertion: 46303 nanoseconds
+Quick: 56507 nanoseconds
+
+*** results of running this testcase 100 TIMES, display the average runtime of all runs:
+
+This is average sorting runtime of 100 lists of size 10
+In the range [-1721941,1203012]
+For LinkedLists: 
+Merge: 14342 nanoseconds 
+Insertion: 3697 nanoseconds 
+Quick: 2412 nanoseconds 
+For ArrayLists: 
+Merge: 2495 nanoseconds
+Insertion: 2840 nanoseconds
+Quick: 1715 nanoseconds
+
+
+
+***************************** SORTING RANDOM LISTS of size 100 *****************************
+
+*** running it ONCE
+
+Sorting the list of size 100
+Where each element is in the range [-214748364,214748364]
+For LinkedLists: 
+Merge: 233442 nanoseconds 
+Insertion: 570046 nanoseconds 
+Quick: 73648 nanoseconds 
+For ArrayLists: 
+Merge: 73456 nanoseconds
+Insertion: 253918 nanoseconds
+Quick: 21601 nanoseconds
+
+*** results of running this testcase 100 TIMES, display the average runtime of all runs:
+
+Insertion: 53808 nanoseconds 
+
+
+
+
+***************************** SORTING RANDOM LISTS of size 1000 *****************************
+
+*** running it ONCE
+
+Sorting the list of size 1000
+Where each element is in the range [-214748364,214748364]
+For LinkedLists: 
+Merge: 9039713 nanoseconds 
+Insertion: 485330664 nanoseconds 
+Quick: 6354750 nanoseconds 
+For ArrayLists: 
+Merge: 4532770 nanoseconds
+Insertion: 17284954 nanoseconds
+Quick: 973201 nanoseconds
+
+*** results of running this testcase 100 TIMES, display the average runtime of all runs:
+
+This is average sorting runtime of 100 lists of size 1000
+In the range [-214748364,214748364]
+For LinkedLists: 
+Merge: 1782746 nanoseconds 
+Insertion: 478679378 nanoseconds 
+Quick: 6441980 nanoseconds 
+For ArrayLists: 
+Merge: 198476 nanoseconds
+Insertion: 3405824 nanoseconds
+Quick: 99725 nanoseconds
+
+
+
+***************************** SORTING RANDOM LISTS of size 10000 *****************************
+
+*** running it ONCE
+
+Sorting the list of size 10000
+Where each element is in the range [-214748364,214748364]
+For LinkedLists: 
+Merge: 241432937 nanoseconds 
+Insertion: 657035410773 nanoseconds 
+Quick: 1003257451 nanoseconds 
+For ArrayLists: 
+Merge: 131474 nanoseconds
+Insertion: 274346575 nanoseconds
+Quick: 5109965 nanoseconds
+
+
+*** results of running this testcase 1000 TIMES, display the average runtime of all runs:
+
+Sorting the list of size 10000
+Where each element is in the range [-214748364,214748364]
+For LinkedLists: 
+Merge: 141332939 nanoseconds 
+Insertion: 957065711773 nanoseconds 
+Quick: 1103276451 nanoseconds 
+For ArrayLists: 
+Merge: 131474 nanoseconds
+Insertion: 274346575 nanoseconds
+Quick: 5109965 nanoseconds
+
+
+
+
+***************************** SORTING LIST OF SIZE 10 WHERE EACH ELEMENT IS [-10,10] *****************************
+
+*****running it ONCE
+
+Test sorting random list of size 10 with -10 to 10
+Sorting the list of size 10
+Where each element is in the range [-10,10]
+For LinkedLists: 
+Merge: 5968 nanoseconds 
+Insertion: 2483 nanoseconds 
+Quick: 4808 nanoseconds 
+For ArrayLists: 
+Merge: 6631 nanoseconds
+Insertion: 1273 nanoseconds
+Quick: 5177 nanoseconds
+
+
+******runing this test Case 100 times, average of 100 runs
+
+This is average sorting runtime of 100 lists of size 10
+In the range [-10,10]
+For LinkedLists: 
+Merge: 2001 nanoseconds 
+Insertion: 869 nanoseconds 
+Quick: 1212 nanoseconds 
+For ArrayLists: 
+Merge: 1421 nanoseconds
+Insertion: 549 nanoseconds
+Quick: 686 nanoseconds
+
+
+***************************** SORTING LIST OF SIZE 100 WHERE EACH ELEMENT IS [-10,10] *****************************
+
+*****running it ONCE
+
+Test sorting random list of size 10 with -10 to 10
+Sorting the list of size 10
+Where each element is in the range [-10,10]
+For LinkedLists: 
+Merge: 5968 nanoseconds 
+Insertion: 2483 nanoseconds 
+Quick: 4808 nanoseconds 
+For ArrayLists: 
+Merge: 6631 nanoseconds
+Insertion: 1273 nanoseconds
+Quick: 5177 nanoseconds
+
+
+******running this test Case 100 times, average of 100 runs
+
+This is average sorting runtime of 100 lists of size 100
+In the range [-10,10]
+For LinkedLists: 
+Merge: 48413 nanoseconds 
+Insertion: 289261 nanoseconds 
+Quick: 42755 nanoseconds 
+For ArrayLists: 
+Merge: 18622 nanoseconds
+Insertion: 32963 nanoseconds
+Quick: 8134 nanoseconds
+
+
+
+***************************** SORTING LIST OF SIZE 1000 WHERE EACH ELEMENT IS [-10,10] *****************************
+
+
+******running this test once 
+Sorting the list of size 1000
+Where each element is in the range [-10,10]
+For LinkedLists: 
+Merge: 1747112 nanoseconds 
+Insertion: 454477202 nanoseconds 
+Quick: 6938266 nanoseconds 
+For ArrayLists: 
+Merge: 184465 nanoseconds
+Insertion: 3136327 nanoseconds
+Quick: 83223 nanoseconds
+
+
+******running this test Case 100 times, average of 100 runs
+
+This is average sorting runtime of 100 lists of size 1000
+In the range [-10,10]
+For LinkedLists: 
+Merge: 1715818 nanoseconds 
+Insertion: 453927456 nanoseconds 
+Quick: 6692073 nanoseconds 
+For ArrayLists: 
+Merge: 191485 nanoseconds
+Insertion: 3056756 nanoseconds
+Quick: 83389 nanoseconds
+
+
+
+

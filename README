@@ -1,0 +1,218 @@
+/
+NOTE: I submitted this on Friday when gradescope was not yet setup(check provide :)
+So, I should still qualify for extra credit Piazza@452
+
+
+**********************************************************
+* Project 1: Comparison of Merge,Quick and Insertion Sorts
+* Comp 160
+* README
+* By: Dameli Utembayeva
+* Date: Nov 17 2021 
+* NOTE: sorry if i have typoes, I have dysgraphia and it's hard to catch them :(
+
+        also, you can run this program, but beware because my tests run each sort 100 times
+        so it might take forever
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            javac Sorts.java
+            or
+            javac *.java
+     - Run
+            java Sorts.java
+
+
+*********************************************************
+
+Program Purpose:
+This project compares the runtimes of various sorts.
+It implements Merge Sort, Quick Sort and Insertion Sort and tests their 
+performance on LL and AL of different sizes and input range.
+
+*********************************************************
+
+Files:
+     README --- this file, explains my project and how I approached performance testing
+
+     data.txt --- my research and data that I collected after running various sorts of various inputs
+
+     Sorts.java ----implementation
+
+
+*********************************************************
+
+Acknowledgements: 
+Thank you Peak!(piazza @419)
+GeeksForGeeks
+tutorialspoint.com
+My comp15 lab on sorts
+Java List Library for making my life easy
+Taylor Swift for providing music for the grind :)
+
+*********************************************************
+
+DESIGN PROCESS/CODING/HOW I BUILT THE CODE:
+
+**** General Design Info:
+My code is split into 2 parts: the setup code for testing/compring and the actual sorts implemeneted.
+
+The way I measured performance is I recorded how much in nanoseconds it takes to sort a certain input(look at timeGivenSOrt() function)
+
+Each sort is to be performed on both Linked List and Array:Ost.
+Each sort/function always takes in an abstract type List so I can substitute it with either an ArrayList or a Linked List. 
+Since I did Insertion/Quick sort in place, I had no issues with performing operations on the abstract type because I did not have to initialize it. The only issue I ran into was when implementing mergesort to create 
+2 separate sublists in the recursive steps, I had to specify types of those sublists. The way I resolved it was just by creating 2 different versions of MergeSort: one for AL, another for LL. 
+
+
+Note: I did not make a wrapper function for Merge because it would have caused issues with the accuracy of how I measure runtime in timeGivenSort() function since going through the wrapper and calling the Merge for AL/LL also takes some runtime(function calls take runtime)
+
+***** PART I: SETUP
+
+The general logic of my setup is that I have a bunch of helper function that let me create different lists of different sizes
+and also be able to control the range in which element can be
+
+I also did not want to rely on just a single data point, which is why my implementation includes a function that
+runs all sorts specified number of times. It then takes the average of all runtime results and displays that. It
+was useful to draw conclusions()
+
+***** PART II: SORT IMPLEMENTATIONS
+
+The actual sorts implementing strategy:
+
+I looked up the pseudocode on tutorialspoint.com
+
+Insertion in Place
+         *for this I consulted the pseudocode on GeeksForGeeks
+         1)pick next to first element
+         2)compare with all elements in sorted sublist
+         3)shift elements in the sorted sublis that is > than the cur val that is abt to be sorted
+         4)insert the value
+
+MergeSort Implementation using additional lists for right and left lists:
+        *consulted geeks and geeks
+        *have a helper function merge
+
+        Mergesort:
+        --BASE CASE: if size is 2 < thenr return as it is base case
+        --Create temp arrays on right and left
+        --Find mid
+        --Call mergesort on the left of the mide
+        --Call mergesort on the right of the mid
+        --Perform merge
+
+        Merge helper:
+          -using the temp arrays that are provided
+          -traverse and add smaller elements into left subarray
+          -add bigger elements into right subarray
+
+Quicksort in Place:
+         I have a helper as well -- partition
+         Quicksort:
+             --partition the the array using pivot
+             --quicksort left of the partition
+             --quicksort right of the partition
+         Parition:
+             -while left side is smaller the the pivot, keep going
+             -while right is bigger than pivot,keep going
+             -if left is bigger than right, break
+             -iotherwise swap the left and right
+             -return right because it is always the pointers
+         
+      
+*********************************************************
+
+
+PERFORMANCE TESTS: TYPES OF INPUT
+
+Below I provided test cases for which I tested in order to determine which sort works when
+the best.
+
+Additionally, I wanted to base my concusions on a LOT of data points instead of 1,
+so I ran each test 100 times(runAverage function) and averaged the results from all these
+runs to get to my conclusions
+
+I tested best/worst input cases of each algorithm on both LL and AL's
+1)Best case input Insertion Sort: almost sorted array with 1 element in the wrong place;
+2)Worst case input Insertion Sort: reverse sorted array
+3)Best case input Quick Sort: array is unsorted and  every partition divides elements in equal parts 
+4)Worst case input Quick Sort: sorted input
+5)When merge sort is faster than quick sort because mergesort is always the same: mergesort performs the same,
+but it is faster than quicksort
+when the the size of the list is huGE, so I tested
+
+Additionally, I also tried these sorts on following cases:
+
+1) 10 elements in the range from Integer.MIN to Integer.MAX
+2) 100 elements in the randge from Integer.MIN to Integer.MAX;
+3) 1000 elements in the randge from Integer.MIN to Integer.MAX;
+4) 10000 elements in the range from Integer.MIN to Integer.MAX
+5) 10 elements in the small range between -10 to 10
+6) 100 elements in the small range between -10 to 10
+7) 1000 elements in the small range between -10 to 10
+8) 10000 elements in the small range between -10 to 10
+
+I googled the maximum range an integer could be in
+Integer.MIN value: -214748364;
+Integer.MAX value 214748364;
+
+Tests 5-8 were done because I was curious if the range of each inputted element affected sorts
+
+
+
+SO, in total there are 8+5 = 13 testcases that have been tested on both AL and LL
+so 13*2(because AL and LL) = 36 tests of performance were tested
+
+From the 38 tests, I drew my conclusions
+
+
+IMPORTANT: this data can be found in data.txt
+
+*********************************************************
+
+Conclusions:
+
+Looking on data.txt
+
+For AL:
+On small lists with random range of each element, quicksort was the fastest, insertion is the slowest
+On large lists with random range of each element, quicksort was the fastest, insertiong was the slowest;
+On small lists with small range in which each element can be in a limited range, quicksort is the fastest, mergesort was the slowers;
+On almost sorted, insertion was the fastest,quicksort was slowest
+On reverse sorted, insertion was the fastest it is supposed to be the worst, merge was the sloewrs
+On an AL that is unsorted and every partition divides elements in equal parts, quicksort was the fastest, merge was the slowersr
+
+For LL:
+On small lists with random range of each element, quicksort was the fastest, insertion is the slowest
+On large lists with random range of each element, quicksort was the fastest, insertiong was the slowest;
+On small lists with small range in which each element can be in a limited range, quicksort is the fastest, mergesort was the slowers;
+On sorted, insertion was the fastest, quicksort was slowerst
+On reverse sorted, insertion was the fastest by little, mergesort was the slowest
+On a LL that is unsorted and every partition divides elements in equal parts, quicksort was the fastest, merge was the slowersr
+
+
+The range of each inputted element did not affect how sorts compare to each other, the size did affect. The bigger was
+the size of the input, the slower the insertion sort was, whereas merge and quicksort performed the same.
+
+Unusual behaviour that I did not expect:
+Mergesort was never the fastest. Even on a large input, overall, in most cases Quicksort was the best choice.
+In fact, on the worst case of quicksort, quicksort still performed better than mergesort.
+
+*************************************************************
+
+Interesting Things learned:
+
+All the sorts performed in the expected way(except mergesort). All the best/worst input
+cases worked as expected.
+
+The only thing that was unusual was the runtime of mergesort. It was
+really slow for some reason(forn both AL and LL). It didn't outperform quicksort
+when the list size was huge in any way, although it is expected that quiksort performs
+slower on bigger inputs.
+
+
+
+
+
+
